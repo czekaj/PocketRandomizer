@@ -94,8 +94,11 @@ var PocketAPI = {
 				{
 					var newURL = data.list[item].resolved_url
 					console.log('url='+newURL)
-					var resolvedId = data.list[item].resolved_id
-					chrome.tabs.create({ url: 'http://getpocket.com/a/read/' + resolvedId });
+					var newItemId = data.list[item].item_id;
+					chrome.tabs.query({'active': true, 'windowId': chrome.windows.WINDOW_ID_CURRENT},
+					   function(tabs){
+					      chrome.tabs.update(tabs[0].id, {url: 'http://getpocket.com/a/read/' + newItemId});
+					  	});
 				}
 				
 			})
