@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+
+  "name": "Pocket Randomizer",
+  "description": "Display a random article from your Pocket queue in Google Chrome",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+
+  "icons": {
+        "128": "icon.png",
+        "16": "icon.png",
+        "48": "icon.png"
+  },  
+  "web_accessible_resources": [
+    "auth.html"
+  ],  
+  "permissions": [
+    "tabs",
+    "https://getpocket.com/"
+  ]
+}
