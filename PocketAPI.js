@@ -94,7 +94,8 @@ var PocketAPI = {
 				{
 					var newURL = data.list[item].resolved_url
 					console.log('url='+newURL)
-					chrome.tabs.create({ url: newURL });
+					var resolvedId = data.list[item].resolved_id
+					chrome.tabs.create({ url: 'http://getpocket.com/a/read/' + resolvedId });
 				}
 				
 			})
